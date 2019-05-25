@@ -1,0 +1,287 @@
+/*
+* Copyright (C) 2019 Falk Appel
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+:root {
+    /* support dark mode */
+    color-scheme: light dark;
+
+    /* basic color definition */
+    /*#5a5a5a*/
+    --dark-gray: rgb(90, 90, 90);
+    /* #DDDDDD*/
+    --light-gray: rgb(221, 221, 221);
+    /* #FFAB28*/
+    --orange: rgb(255, 171, 40);
+    /*#AA0022*/
+    --red: rgb(170, 0, 34);
+    /*#fafafa*/
+    --white: rgb(250, 250, 250);
+    /*#1e1e1e*/
+    --black: rgb(30, 30, 30);
+
+    /* default          : light scheme */
+    --main-color        : var(--orange);
+    --contrast-color    : var(--red);
+    --text-color        : var(--dark-gray);
+    --text-color-inverse: var(--light-gray);
+    --background-color  : var(--white);
+
+    /* font sizes */
+    --font-size-small      : 10px;
+    --font-size-normal     : 14px;
+    --font-size-large      : 18px;
+    --font-size-extra-large: 24px;
+
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+/* support dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* dark scheme */
+        --main-color        : var(--red);
+        --contrast-color    : var(--orange);
+        --text-color        : var(--light-gray);
+        --text-color-inverse: var(--dark-gray);
+        --background-color  : var(--black);
+    }
+}
+
+/* fonts */
+@font-face {
+    font-family: the-sans;
+    src        : url(../fonts/TheSans-Light_44258.ttf);
+}
+
+@font-face {
+    font-family: the-sans;
+    src        : url(../fonts/TheSans_B7_Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: the-sans-bold;
+    src        : url(../fonts/TheSans_B8_ExtraBold.ttf);
+}
+
+/* ensure border-box */
+* {
+    box-sizing : border-box;
+    font-family: the-sans;
+}
+
+/* define columns and rows */
+/* for small witdh: */
+[class*="col-"] {
+    width: 100%;
+}
+
+[class*="col-"] {
+    float         : left;
+    padding-top   : 1vmax;
+    padding-bottom: 0vmax;
+    padding-left  : 0vmax;
+    padding-right : 0vmax;
+}
+
+.row::after {
+    content: "";
+    clear  : both;
+    display: table;
+}
+
+.centered {
+    display        : flex;
+    justify-content: center;
+}
+
+/* styling */
+html {
+    background-color: var(--background-color);
+    color           : var(--text-color);
+}
+
+.logo {
+    background-color: var(--main-color);
+    padding         : 1vmax;
+    margin-left     : 0vmax;
+    font-size       : var(--font-size-large);
+}
+
+.topimage {
+    padding-top   : 0vmax;
+    padding-bottom: 0vmax;
+    padding-left  : 0vmax;
+    padding-right : 0vmax;
+}
+
+.content {
+    padding  : 1vmax;
+    font-size: var(--font-size-normal)
+}
+
+.footer {
+    align-content: center;
+    text-align   : center;
+    font-size    : var(--font-size-small)
+}
+
+.menu ul {
+    list-style-type: none;
+    height         : 100%;
+    margin         : 0;
+    padding        : 0;
+    font-size      : var(--font-size-normal);
+    font-weight    : bold;
+}
+
+.menu li {
+    padding         : 0.8em;
+    margin-bottom   : 1vmax;
+    background-color: var(--main-color);
+    box-shadow      : var(--shadow);
+}
+
+.menu li:hover {
+    background-color: var(--contrast-color);
+}
+
+a.menu:link,
+a.menu:visited {
+    text-decoration: none;
+    color          : var(--text-color);
+    font-weight    : bold;
+    display        : inline-block;
+    width          : 100%;
+    position       : relative;
+    z-index        : 1;
+    padding        : 2em;
+    margin         : -2em;
+}
+
+a.menu:hover {
+    text-decoration: none;
+    color          : var(--text-color-inverse);
+}
+
+li.selected {
+    padding         : 0.8em;
+    margin-bottom   : 1vmax;
+    background-color: var(--contrast-color);
+    box-shadow      : var(--shadow);
+    color           : var(--text-color-inverse);
+}
+
+.icon {
+    width : 24px;
+    height: 24px;
+}
+
+h1 {
+    font-size  : var(--font-size-extra-large);
+    font-family: the-sans-bold;
+}
+
+h2 {
+    font-size: var(--font-size-large)
+}
+
+h3 {
+    font-size: var(--font-size-normal)
+}
+
+img {
+    max-width: 100%;
+    height   : auto;
+}
+
+a:link {
+    color: var(--text-color);
+}
+
+a:visited {
+    color: var(--contrast-color);
+}
+
+/* for wide screens: */
+@media only screen and (min-width: 738px) {
+
+    .col-1 {
+        width: 8.33vw;
+    }
+
+    .col-2 {
+        width: 16.66vw;
+    }
+
+    .col-3 {
+        width: 25vw;
+    }
+
+    .col-4 {
+        width: 33.33vw;
+    }
+
+    .col-5 {
+        width: 41.66vw;
+    }
+
+    .col-6 {
+        width: 50vw;
+    }
+
+    .col-7 {
+        width: 58.33vw;
+    }
+
+    .col-8 {
+        width: 66.66vw;
+    }
+
+    .col-9 {
+        width: 75vw;
+    }
+
+    .col-10 {
+        width: 83.33vw;
+    }
+
+    .col-11 {
+        width: 91.66vw;
+    }
+
+    .col-12 {
+        width: 100vw;
+    }
+
+    .logo {
+        height    : 10vmax;
+        box-shadow: var(--shadow);
+    }
+
+    .topimage {
+        padding-top   : 0vmax;
+        padding-bottom: 0vmax;
+        padding-left  : 1vmax;
+        padding-right : 0vmax;
+        height        : 10vmax;
+    }
+
+    .topimage img {
+        max-width : 100%;
+        height    : 100%;
+        box-shadow: var(--shadow);
+    }
+}
