@@ -215,6 +215,22 @@ a:visited {
     color: var(--contrast-color);
 }
 
+.external-links {
+    text-align: center;
+    text-decoration: none;
+}
+
+a.external-links{
+    text-decoration: none;
+}
+
+img.external-links {
+    height: auto;
+    
+    max-height: 65px;
+    margin: 1vmax;
+}
+
 /* for wide screens: */
 @media only screen and (min-width: 738px) {
 
