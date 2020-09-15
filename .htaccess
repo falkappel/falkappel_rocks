@@ -1,3 +1,9 @@
 RewriteEngine on
+
+ # redirect everything to https
  RewriteCond %{HTTP:X-Forwarded-Proto} !https
  RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+ # for german browsers use german index
+ RewriteCond %{HTTP:Accept-Language} (de) [NC]
+ RewriteRule ^$ index_de.html [L,NS]
