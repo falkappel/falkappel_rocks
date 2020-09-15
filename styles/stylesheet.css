@@ -138,6 +138,16 @@ html {
     font-size    : var(--font-size-small)
 }
 
+.translation {
+    padding-top   : 0vmax;
+    padding-bottom: 0.5vmax;
+    padding-left  : 0vmax;
+    padding-right : 0vmax;
+    align-content: right;
+    text-align   : right;
+    font-size    : var(--font-size-normal)
+}
+
 .menu ul {
     list-style-type: none;
     height         : 100%;
