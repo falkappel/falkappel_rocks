@@ -4,6 +4,6 @@ RewriteEngine on
  RewriteCond %{HTTP:X-Forwarded-Proto} !https
  RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
- # for german browsers use german index
+ # for german browsers use index_de.html
  RewriteCond %{HTTP:Accept-Language} (de) [NC]
  RewriteRule ^$ index_de.html [L,NS]
