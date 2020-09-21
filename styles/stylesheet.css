@@ -132,6 +132,10 @@ html {
     font-size: var(--font-size-normal)
 }
 
+.content_section {
+    margin-bottom  : 1vmax;
+}
+
 .footer {
     align-content: center;
     text-align   : center;
@@ -197,6 +201,12 @@ li.selected {
 .icon {
     width : 24px;
     height: 24px;
+}
+
+.app_link {
+    width : 130px;
+    height: 40px;
+    margin: 0.5vmax;
 }
 
 h1 {
