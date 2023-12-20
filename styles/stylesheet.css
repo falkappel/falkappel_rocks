@@ -62,18 +62,18 @@
 /* fonts */
 @font-face {
     font-family: the-sans;
-    src        : url(../fonts/TheSans-Light_44258.ttf);
+    src        : url(../fonts/Atkinson-Hyperlegible-Regular-102.ttf);
 }
 
 @font-face {
     font-family: the-sans;
-    src        : url(../fonts/TheSans_B7_Bold.ttf);
+    src        : url(../fonts/Atkinson-Hyperlegible-Bold-102.ttf);
     font-weight: bold;
 }
 
 @font-face {
     font-family: the-sans-bold;
-    src        : url(../fonts/TheSans_B8_ExtraBold.ttf);
+    src        : url(../fonts/Atkinson-Hyperlegible-Bold-102.ttf);
 }
 
 /* ensure border-box */
